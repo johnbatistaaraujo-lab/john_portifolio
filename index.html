@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <style>
+        /* Estilização Geral */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #af7932c6;
+            color: #f2e8e8;
+        }
 
+        /* Menu de Navegação */
+        nav {
+            background: #503c2c;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* Seções de Conteúdo */
+        section {
+            display: none; /* Esconde todas as seções por padrão */
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .active {
+            display: block; /* Mostra apenas a seção ativa */
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a onclick="showSection('home')">Início</a>
+        <a onclick="showSection('trabalhos')">Portfólio</a>
+        <a onclick="showSection('sobre')">Sobre Mim</a>
+        <a onclick="showSection('contato')">Contato</a>
+    </nav>
+
+    <section id="home" class="active">
+        <h1>John Eduardo</h1>
+        <p>Um aplicativo sebre meus trabalhos e um pouco sobre mim</p>
+        <p>no final tem o meu contato se quiser sabem mais sobre</p>
+        <P</P>
+    </section>
+
+    <section id="trabalhos">
+        <h1>Meus websites feitos com HTML.</h1>
+        <div class="card-container">
+            <div class="card"><h3>primeiro site</h3><p></p><a href="https://github.com/johnbatistaaraujo-lab/front-end-/blob/main/codigos.htm">Link do site.</a></div>
+            <div class="card"><h3>Calculadora</h3><p></p> <a href="https://github.com/johnbatistaaraujo-lab/front-end-/blob/main/calculadora/calculadora.html">Link do site.</a></div>
+            <div class="card"><h3>Barbearia</h3><p></p> <a href="https://github.com/johnbatistaaraujo-lab/front-end-/blob/main/barbearia/barbearia.html">Link do site.</a></div> 
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h1>Sobre Mim</h1>
+        <p>gosto de desenhar que represente alguns pensamento ou poema.</p>
+    </section>
+
+    <section id="contato">
+        <h1>Contato</h1>
+        <p>E-mail: john.batista.araujo@escola.pr.gov.br</p>
+        
+    </section>
+
+    <script>
+        function showSection(id) {
+            // Remove a classe 'active' de todas as seções
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Adiciona a classe 'active' apenas na seção clicada
+            document.getElementById(id).classList.add('active');
+            
+            // Rola para o topo da página ao trocar
+            window.scrollTo(0, 0);
+        }
+    </script>
+<p> <strong></strong></p>
+</body>
+</html>
